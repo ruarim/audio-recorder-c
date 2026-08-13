@@ -106,6 +106,7 @@ OSStatus recorder_create(const recorder_config *cfg, audio_recorder **out)
             goto fail;
     }
 
+    // init buffers
     UInt32 buffer_size = r->format.mSampleRate * r->format.mBytesPerFrame * cfg->buffer_secs;
     for (UInt32 i = 0; i < cfg->num_buffers; i++)
     {
